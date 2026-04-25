@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  bee6:
+    build: .
+    volumes:
+      - ./results:/app/results
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python bee6_main.py backtest --update-data
